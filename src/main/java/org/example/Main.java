@@ -12,8 +12,31 @@ import java.util.concurrent.ThreadLocalRandom;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    static  int fibonacci ( int n){
+        if( n <=1){
+            return n;
+
+        }
+        return fibonacci(n-1)+fibonacci(n-2);
+
+    }
+
+        static int functorio( int n){
+        if(n > 1){
+            return n*functorio(n-1);
+        } else {
+            return 1;
+        }
+
+    }
     public static void main(String[] args) {
-       Scanner scanner = new Scanner(System.in);
+        int n = 10;
+                for(int i =0;i<n;i++){
+                    System.out.println("hello"+ fibonacci(i));
+
+                }
+        System.out.println(functorio(5));
+//       Scanner scanner = new Scanner(System.in);
 //        System.out.print("Enter the English: ");
 //        int english = scanner.nextInt();
 //        System.out.print("Enter the Kiswahili: ");
@@ -29,33 +52,25 @@ public class Main {
 //
 //        int grading = Calculator.studentGrading(english,chemistry,kiswahili,history,biology,math);
 
-            Random no = new Random();
-            int randomNo = no.nextInt(0,101);
-//            int randomNo = ThreadLocalRandom.current().nextInt(0,101);
-        int myGuess = 0;
-        do {
-            System.out.print("Type the your number: ");
-             myGuess = scanner.nextInt();
-             if(myGuess == -1){
-                 break;
-             }
-            else if(myGuess > randomNo){
-                System.out.println("Your number is too high");
-            } else if (myGuess < randomNo){
-                System.out.println("Your number is too low");
-            }
-            else {
-                System.out.println("You guessed it right");
-            }
-        } while (randomNo != myGuess);
-
-
-
-
-
-
-
-
+//            Random no = new Random();
+//            int randomNo = no.nextInt(0,101);
+////            int randomNo = ThreadLocalRandom.current().nextInt(0,101);
+//        int myGuess = 0;
+//        do {
+//            System.out.print("Type the your number: ");
+//             myGuess = scanner.nextInt();
+//             if(myGuess == -1){
+//                 break;
+//             }
+//            else if(myGuess > randomNo){
+//                System.out.println("Your number is too high");
+//            } else if (myGuess < randomNo){
+//                System.out.println("Your number is too low");
+//            }
+//            else {
+//                System.out.println("You guessed it right");
+//            }
+//        } while (randomNo != myGuess);
 
 
 //
@@ -189,5 +204,7 @@ public class Main {
 //            System.out.println("Invalid number");
 //
 //        }
-  }
+
+
+    }
     }
