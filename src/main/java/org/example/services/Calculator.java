@@ -1,12 +1,13 @@
 package org.example.services;
 
-import org.example.model.Atm;
+import org.example.model.Account;
 import org.example.model.Salary;
 import org.example.model.Student;
 import org.example.model.Vehicle;
 
 public class Calculator {
-     public static double calculateNet(double grossAmount){
+
+    public static double calculateNet(double grossAmount){
          Salary amount = new Salary();
          double results;
          results= grossAmount -(grossAmount*amount.getNhif()/100)-(grossAmount*amount.getNssf()/100)-(grossAmount*amount.getHouseLevy()/100)-(grossAmount*amount.getPaye()/100);
@@ -38,9 +39,27 @@ public class Calculator {
         System.out.println(average);
         return total;
     }
-    public  static double getBalance (double account){
-         Atm V1 = new Atm();
-        V1.setBalance(account);
-         return account;
+    public double getBalance (Account amount){
+        return amount.getBalance();
+
+    }
+    public static boolean deposit (Account account, double totalDeposit){
+        if(totalDeposit > 0 ){
+            double balance = account.getBalance()+ totalDeposit;
+            account.setBalance(balance);
+            return true;
+
+
+    }
+        return false;
+    }
+
+    public boolean setPin (Account currentPin,int newPin){
+        if(currentPin.getCurrentPin()==newPin){
+            System.out.println("You've entered the correct current pin");
+            return true;
+        }
+return false;
+
     }
 }
